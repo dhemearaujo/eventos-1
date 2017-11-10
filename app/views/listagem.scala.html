@@ -1,0 +1,21 @@
+
+@(Evento : List[Evento])
+
+
+@main("Listagem") {
+
+    <table class="table">     
+            <tr>    
+                <th scope="row">Nome</th>
+                <th scope="row">Descricao</th>
+                <th scope="row">Preco</th>
+            </tr>
+        @for(item <- Evento){
+            <tr><td>@item.nome</td><td>@item.descricao</td><td>@item.preco</td></tr>
+
+        }
+    </table>
+
+       
+ 
+}

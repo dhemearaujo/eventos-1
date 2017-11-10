@@ -1,0 +1,24 @@
+
+
+@(message: String)(formEvento : Form[Evento])
+
+@import helper._
+@import b4.vertical.fieldConstructor
+
+
+@main("Cadastro de Eventos") {
+
+ @*nosso content*@
+	 
+		<h1>Cadastro de Eventos</h1>
+		 @b4.form(CSRF(routes.HomeController.cadastroDeNovoEvento)){
+
+			@b4.text(formEvento("nome"),'_label -> "Nome")
+			@b4.text(formEvento("descricao"),'_label -> "Descricao")
+			@b4.text(formEvento("organizador"),'_label -> "Organizador")
+			@b4.number(formEvento("preco"),'_label -> "Preco")
+			@b4.submit('class -> "btn btn-primary"){Salvar}
+
+		} 
+		 
+}	
