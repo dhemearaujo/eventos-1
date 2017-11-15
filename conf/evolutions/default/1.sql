@@ -9,6 +9,7 @@ create table evento (
   descricao                     varchar(255),
   organizador                   varchar(255),
   preco                         double,
+  data_evento                   timestamp,
   constraint pk_evento primary key (id)
 );
 
