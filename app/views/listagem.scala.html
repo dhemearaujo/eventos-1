@@ -8,10 +8,25 @@
             <tr>    
                 <th scope="row">Nome</th>
                 <th scope="row">Descricao</th>
+                <th scope="row">Organizador</th>
                 <th scope="row">Preco</th>
+                <th scope="row">Data</th>
             </tr>
         @for(item <- Evento){
-            <tr><td>@item.nome</td><td>@item.descricao</td><td>@item.preco</td></tr>
+            <tr><td>@item.nome</td><td>@item.descricao</td><td>@item.organizador</td>
+                <td>@item.preco</td><td>@item.dataEvento</td></tr>
+
+            <div class="col-lg-4 col-sm-6 portfolio-item">
+                <div class="card h-100">
+                  <a href="#"><img class="card-img-top" src="@routes.Assets.versioned("images/imagem.png")" alt=""></a>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <a href="#">@item.nome -@item.dataEvento</a>
+                    </h4>
+                    <p class="card-text">@item.descricao</p>
+                  </div>
+                </div>
+              </div>
 
         }
     </table>

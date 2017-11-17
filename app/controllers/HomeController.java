@@ -42,16 +42,11 @@ public class HomeController extends Controller {
     }
 
     public Result cadastroDeNovoEvento(){
-        DynamicForm formulario = formFactory.form().bindFromRequest();
-        evento.nome = formulario.get("nome");
-        evento.descricao = formulario.get("desc");
-        evento.organizador = formulario.get("un");
-        evento.preco = Double.valueOf(formulario.get("preco"));
-        String dataEvento = formulario.get("dataEvento");
+        Form<Evento> formEvento = formFactory.form(Evento.class).bindFromRequest();
+        Evento e = formEvento.get();
+        e.save();
 
-        evento.save();
-
-        flash("success", evento.nome+ " Salvo com sucesso");
+        flash("success", e.nome+ " Salvo com sucesso");
 
         return redirect(routes.HomeController.index());
     }
