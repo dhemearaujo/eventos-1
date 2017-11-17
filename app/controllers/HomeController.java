@@ -53,7 +53,7 @@ public class HomeController extends Controller {
 
         flash("success", evento.nome+ " Salvo com sucesso");
 
-        return redirect(routes.HomeController.cadastroDeEvento());
+        return redirect(routes.HomeController.index());
     }
 
        
